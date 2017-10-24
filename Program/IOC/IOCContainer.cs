@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IOC
 {
-    public class IOCContainer
+    public class IOCContainer:IContainer
     {
         private Dictionary<Type, List<Type>> typeDict;
 
@@ -44,7 +44,7 @@ namespace IOC
             }
         }
 
-        public void RegisterType<I, T>(bool isSingleton = false)
+        public void Register<I, T>(bool isSingleton = false)
         {
             AddType<I>(typeof(T));
 
