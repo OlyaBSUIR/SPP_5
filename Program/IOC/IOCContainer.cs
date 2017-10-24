@@ -38,9 +38,6 @@ namespace IOC
         public void RegisterType<T>(bool isSingleton = false)
         {
             AddType<T>(typeof(T));
-
-            //add the type to the instance dictionary as a key without a value
-            //instantiate the value upon resolution
             if (isSingleton)
             {
                 AddInstance<T>(null);
@@ -112,14 +109,12 @@ namespace IOC
             if (constructor != null)
                 constructorParams = constructor.GetParameters();
 
-            //if we do not have parameters or constructors, instantiation is easy
             if (constructorParams == null || constructorParams.Count() == 0)
             {
                 return Activator.CreateInstance(type);
             }
             else
             {
-                //go through each parameter type and resolve it
                 object[] paramInstances = new object[constructorParams.Length];
                 Type parameterType = null;
                 for (int i = 0; i < constructorParams.Length; i++)

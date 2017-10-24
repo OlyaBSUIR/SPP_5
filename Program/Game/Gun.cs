@@ -13,5 +13,26 @@ namespace Game
             return "Выстрел!!!";
         }
 
+        public override bool Equals(System.Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            Gun p = obj as Gun;
+            if ((System.Object)p == null)
+            {
+                return false;
+            }
+
+            return (this.ToString() == p.ToString());
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
     }
 }

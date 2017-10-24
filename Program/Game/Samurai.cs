@@ -24,5 +24,26 @@ namespace Game
         {
             return weapon.Strike();
         }
+
+        public override bool Equals(System.Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            Samurai p = obj as Samurai;
+            if ((System.Object)p == null)
+            {
+                return false;
+            }
+
+            return (this.weapon.Equals(p.weapon));
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }

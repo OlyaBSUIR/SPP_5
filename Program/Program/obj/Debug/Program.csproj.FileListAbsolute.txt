@@ -4,3 +4,7 @@ C:\Users\Оля\Desktop\SPP_laba5\Program\Program\bin\Debug\Program.pdb
 C:\Users\Оля\Desktop\SPP_laba5\Program\Program\obj\Debug\Program.csprojResolveAssemblyReference.cache
 C:\Users\Оля\Desktop\SPP_laba5\Program\Program\obj\Debug\Program.exe
 C:\Users\Оля\Desktop\SPP_laba5\Program\Program\obj\Debug\Program.pdb
+C:\Users\Оля\Desktop\SPP_laba5\Program\Program\bin\Debug\Game.dll
+C:\Users\Оля\Desktop\SPP_laba5\Program\Program\bin\Debug\IOC.dll
+C:\Users\Оля\Desktop\SPP_laba5\Program\Program\bin\Debug\Game.pdb
+C:\Users\Оля\Desktop\SPP_laba5\Program\Program\bin\Debug\IOC.pdb
