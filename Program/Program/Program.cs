@@ -113,6 +113,12 @@ namespace Program
             param[0] =  true;
             genericMI.Invoke(instance, param);
 
+            paramaters[0] = typeof(IMedicineChest);
+            paramaters[1] = typeof(MedicineChest);
+            genericMI = mi.MakeGenericMethod(paramaters);
+            param[0] = true;
+            genericMI.Invoke(instance, param);
+
             paramaters[0] = typeof(IPlayer);
             paramaters[1] = typeof(Warrior);
             genericMI = mi.MakeGenericMethod(paramaters);
@@ -171,8 +177,6 @@ namespace Program
         static void Main(string[] args)
         {
             DynamicLoadWithReflection();
-
-
 
         }
 

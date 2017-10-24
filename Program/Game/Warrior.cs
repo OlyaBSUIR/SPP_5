@@ -8,18 +8,24 @@ namespace Game
 {
     public class Warrior : IPlayer
     {
-        private readonly IWeapon weapon;
+        private readonly IWeapon weapon1;
+        private readonly IMedicineChest chest;
 
-        public Warrior(IWeapon weapon)
+        public Warrior(IWeapon weapon1,IMedicineChest chest)
         {
-            if (weapon == null)
-                throw new ArgumentNullException(weapon.ToString());
-            this.weapon = weapon;
+            if (weapon1 == null)
+                throw new ArgumentNullException(weapon1.ToString());
+            if (chest == null)
+                throw new ArgumentNullException(weapon1.ToString());
+            this.weapon1 = weapon1;
+            this.chest = chest;
+
         }
 
         public string Attack()
         {
-            return weapon.Strike();
+            return weapon1.Strike() + "  " + chest.Cure();
+            
         }
 
         public override bool Equals(System.Object obj)
@@ -35,7 +41,7 @@ namespace Game
                 return false;
             }
 
-            return (this.weapon.Equals(p.weapon));
+            return (this.weapon1.Equals(p.weapon1));
         }
 
         public override int GetHashCode()
