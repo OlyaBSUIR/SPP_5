@@ -1,5 +1,4 @@
 C:\Users\Оля\Desktop\SPP_laba5\Program\Inject\bin\Debug\Inject.dll
 C:\Users\Оля\Desktop\SPP_laba5\Program\Inject\bin\Debug\Inject.pdb
-C:\Users\Оля\Desktop\SPP_laba5\Program\Inject\obj\Debug\Inject.csprojResolveAssemblyReference.cache
 C:\Users\Оля\Desktop\SPP_laba5\Program\Inject\obj\Debug\Inject.dll
 C:\Users\Оля\Desktop\SPP_laba5\Program\Inject\obj\Debug\Inject.pdb

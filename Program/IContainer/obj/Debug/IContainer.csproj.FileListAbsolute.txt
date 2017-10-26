@@ -1,0 +1,5 @@
+C:\Users\Оля\Desktop\SPP_laba5\Program\IContainer\bin\Debug\IContainer.dll
+C:\Users\Оля\Desktop\SPP_laba5\Program\IContainer\bin\Debug\IContainer.pdb
+C:\Users\Оля\Desktop\SPP_laba5\Program\IContainer\obj\Debug\IContainer.dll
+C:\Users\Оля\Desktop\SPP_laba5\Program\IContainer\obj\Debug\IContainer.pdb
+C:\Users\Оля\Desktop\SPP_laba5\Program\IContainer\obj\Debug\IContainer.csprojResolveAssemblyReference.cache

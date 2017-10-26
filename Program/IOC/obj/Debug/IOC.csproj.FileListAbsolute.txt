@@ -5,3 +5,5 @@ C:\Users\Оля\Desktop\SPP_laba5\Program\IOC\obj\Debug\IOC.pdb
 C:\Users\Оля\Desktop\SPP_laba5\Program\IOC\obj\Debug\IOC.csprojResolveAssemblyReference.cache
 C:\Users\Оля\Desktop\SPP_laba5\Program\IOC\bin\Debug\Inject.dll
 C:\Users\Оля\Desktop\SPP_laba5\Program\IOC\bin\Debug\Inject.pdb
+C:\Users\Оля\Desktop\SPP_laba5\Program\IOC\bin\Debug\IContainer.dll
+C:\Users\Оля\Desktop\SPP_laba5\Program\IOC\bin\Debug\IContainer.pdb
