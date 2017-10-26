@@ -8,3 +8,5 @@ C:\Users\Оля\Desktop\SPP_laba5\Program\Program\bin\Debug\Game.dll
 C:\Users\Оля\Desktop\SPP_laba5\Program\Program\bin\Debug\IOC.dll
 C:\Users\Оля\Desktop\SPP_laba5\Program\Program\bin\Debug\Game.pdb
 C:\Users\Оля\Desktop\SPP_laba5\Program\Program\bin\Debug\IOC.pdb
+C:\Users\Оля\Desktop\SPP_laba5\Program\Program\bin\Debug\Inject.dll
+C:\Users\Оля\Desktop\SPP_laba5\Program\Program\bin\Debug\Inject.pdb

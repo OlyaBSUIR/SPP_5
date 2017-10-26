@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,8 @@ namespace Game
 {
     public class Samurai : IPlayer
     {
-        private IWeapon weapon;
+        [InjectAttribute]
+        public IWeapon weapon;
 
         public Samurai()
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -9,8 +10,8 @@ namespace IOC
 {
     public class IOCContainer:IContainer
     {
-        private Dictionary<Type, List<Type>> typeDict;
 
+        private Dictionary<Type, List<Type>> typeDict;
         private Dictionary<Type, List<object>> instanceDict;
 
         public IOCContainer()
@@ -101,17 +102,36 @@ namespace IOC
             return ResolveType(resolvedType.Last());
         }
 
+        private void SetterInject(Type type, object obj)
+        {
+            
+            FieldInfo[] fieldInfo = type.GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
+
+            foreach (FieldInfo field in fieldInfo)
+            {
+               var attributes = field.GetCustomAttributes();
+
+               foreach (InjectAttribute atribute in attributes)
+               {
+                   Type typeOfField = field.FieldType;
+                   field.SetValue(obj,Resolve(typeOfField));
+               }
+            }
+        }
         private object ResolveType(Type type)
         {
             ConstructorInfo constructor = GetConstructorMaxParams(type);
             ParameterInfo[] constructorParams = null;
+            
 
             if (constructor != null)
                 constructorParams = constructor.GetParameters();
 
             if (constructorParams == null || constructorParams.Count() == 0)
             {
-                return Activator.CreateInstance(type);
+                object obj = Activator.CreateInstance(type);
+                SetterInject(type,obj);
+                return obj;
             }
             else
             {
@@ -122,8 +142,9 @@ namespace IOC
                     parameterType = constructorParams[i].ParameterType;
                     paramInstances[i] = Resolve(parameterType.IsByRef ? parameterType.GetElementType() : parameterType);
                 }
-
-                return constructor.Invoke(paramInstances);
+                object obj = constructor.Invoke(paramInstances);
+                SetterInject(type, obj);
+                return obj;
             }
         }
 
@@ -150,6 +171,8 @@ namespace IOC
 
             return constructors[indexConstructor];
         }
+        
+        
     }
 
 }

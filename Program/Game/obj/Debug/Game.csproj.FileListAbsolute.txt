@@ -2,3 +2,6 @@ C:\Users\Оля\Desktop\SPP_laba5\Program\Game\bin\Debug\Game.dll
 C:\Users\Оля\Desktop\SPP_laba5\Program\Game\bin\Debug\Game.pdb
 C:\Users\Оля\Desktop\SPP_laba5\Program\Game\obj\Debug\Game.dll
 C:\Users\Оля\Desktop\SPP_laba5\Program\Game\obj\Debug\Game.pdb
+C:\Users\Оля\Desktop\SPP_laba5\Program\Game\obj\Debug\Game.csprojResolveAssemblyReference.cache
+C:\Users\Оля\Desktop\SPP_laba5\Program\Game\bin\Debug\Inject.dll
+C:\Users\Оля\Desktop\SPP_laba5\Program\Game\bin\Debug\Inject.pdb

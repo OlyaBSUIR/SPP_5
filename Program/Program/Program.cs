@@ -22,6 +22,7 @@ namespace Program
                 dll.Register<IWeapon, Gun>();
                 dll.Register<IPlayer, Warrior>();
                 dll.Register<IPlayer, Samurai>(true);
+                dll.Register<IMedicineChest, MedicineChest>(true);           
                 dll.RegisterType<Warrior>(true);
                 dll.RegisterType<Samurai>(true);
                 var warrior = dll.Resolve<Warrior>();
@@ -42,24 +43,27 @@ namespace Program
 
         public static void StaticLoad()
         {
-
-            var con = new IOCContainer();
-            con.Register<IWeapon, Knife>();
-            con.Register<IWeapon, Gun>();
-            con.Register<IPlayer, Warrior>();
-            con.RegisterType<Warrior>(true);
-            con.Register<IPlayer, Samurai>(true);
-            con.RegisterType<Samurai>(true);
-
-            //con.RegisterType<IWeapon>();
-            var warrior = con.Resolve<Warrior>();
-            warrior = con.Resolve<Warrior>();
-            Console.WriteLine(warrior.Attack());
-
-            var samurai = con.Resolve<Samurai>();
-            samurai.SetWeapon(con.Resolve<IWeapon>());
-            Console.WriteLine(samurai.Attack());
-            Console.ReadLine();
+            try
+            {
+                var con = new IOCContainer();
+                con.Register<IWeapon, Knife>();
+                con.Register<IPlayer, Warrior>();
+                con.RegisterType<Warrior>(true);
+                con.Register<IPlayer, Samurai>(true);
+                con.Register<IMedicineChest, MedicineChest>(true);
+                con.RegisterType<Samurai>(true);
+                var warrior = con.Resolve<Warrior>();
+                warrior = con.Resolve<Warrior>();
+                Console.WriteLine(warrior.Attack());
+                con.Register<IWeapon, Gun>();
+                var samurai = con.Resolve<Samurai>();
+                Console.WriteLine(samurai.Attack());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.ReadLine();
+            }
         }
 
         public static void DynamicLoadWithReflection()
@@ -176,7 +180,10 @@ namespace Program
 
         static void Main(string[] args)
         {
-            DynamicLoadWithReflection();
+            StaticLoad();
+            //DynamicLoadWithReflection();
+            //DynamicLoad();
+            Console.ReadLine();
 
         }
 
